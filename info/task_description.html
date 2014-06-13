@@ -1,23 +1,24 @@
 <p>
-    Nicola likes to categorize everything.
-    He categorized all reagents in his laboratory, books in the library and notes on the desk.
-    But then he had known about python
-    <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dictionaries</a>
-    and categorized all configurations for Sophia drones.
-    Now these files are looked as deep nested structure, but Sophia don't like this.
-    Let's help Sophia to flatten these dictionaries.
+    Nikola likes to categorize everything in sight.
+    One time Stephan gave him a label maker for his birthday,
+    and the robots were peeling labels off of every surface in the ship for weeks.
+    He has since categorized all the reagents in his laboratory,
+    books in the library and notes on the desk.
+    But then he learned about python <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dictionaries</a>,
+    and categorized all the possible configurations for Sophia’s drones.
+    Now the files are organized in a deep nested structure,
+    but Sophia doesn’t like this. Let's help Sophia to flatten these dictionaries.
 </p>
 
 <p>
     Python dictionaries are a convenient data type to store and process configurations.
-    It allows to store data by keys and to create nested structures.
-    You are given a dictionary where keys are strings and values are strings or dictionaries.
-    The goal is flatten the dictionary, but save all structures in the keys.
-    The result should be the new dictionary without nested dictionaries.
-    The keys should contains a path that contains parent keys from the original dictionary.
-    The keys in the path are separated by "/". If a value is an empty dictionary, then it should be replaced by an empty string
-    ("").
-    Let's look at example.
+    They allow you to store data by keys to create nested structures.
+    You are given a dictionary where the keys are strings and the values are strings or dictionaries.
+    The goal is flatten the dictionary, but save the structures in the keys.
+    The result should be the a dictionary without the nested dictionaries.
+    The keys should contain paths that contain the parent keys from the original dictionary.
+    The keys in the path are separated by a "/". If a value is an empty dictionary,
+    then it should be replaced by an empty string (""). Let's look at an example:
 </p>
 <pre class="brush: python">
 {
@@ -47,8 +48,9 @@
 </pre>
 
 <p>
-    Sophia already have written the code for this task, but it has a bug.
-    <strong>Your should find and fix this bug.</strong>
+    Sophia has already written the code for this task, but it has a bug.
+
+    <strong>Your need to find and fix this bug.</strong>
 </p>
 
 <p>
@@ -73,9 +75,10 @@ flatten({"empty": {}}) == {"empty": ""}
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    This concept can be useful if you need to parse config files and simplify structures for father works.
-    You can easily modify this for your own specification.
-    And it's useful skill to read code and search bugs.
+    This concept can be useful if you need to parse config files and simplify structures
+    for grandfathered systems and file structures.
+    You can easily modify this idea for your own specifications.
+    Besides that, it's a  useful skill to be able to read code and search for bugs.
 </p>
 
 <p>

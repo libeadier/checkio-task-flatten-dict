@@ -1,0 +1,92 @@
+<p>
+    Nikoletta imád mindent, amit csak maga körül lát, rendszerbe szedni. Egyszer kapott 
+    Istvántól egy címkéző gépet a születésnapjára, minek utána hetekig kellett elfelé 
+    távolítgatni a címkéket az űrhajó minden létező felületéről. Ő kategorizálta az összes 
+    reagenst a saját laborjában, a könyveket a könyvtárban és még az asztalon fellelhető 
+    jegyzeteket is. Ám amikor megtudta, hogy a Python-on van 
+    <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">szótár adattípus</a>,
+    ő kategorizálta Zsófia minden drónjához tartozó konfigurációs állományait is. Most ezek 
+    az állományok egy összetett egymásba ágyazott struktúrába vannak rendezve, ami nagyon 
+    nincs Zsófia ínyére. Segítsetek Zsófiának e szótárak szótárait leegyszerűsíteni!
+</p>
+
+<p>
+    A szótár – egy hasznos adattípus különböző konfigurációk tárolására és feldolgozására. 
+    Segítségével kulcsok szerint lehet az adatokat tárolni és egymásba ágyazott struktúrákba 
+    szervezni. Adott egy szótár, amelyben a kulcsok karakterláncokból állnak, ám az értékek 
+    mind karakterláncok, mind szótárak is lehetnek. Ki kell „simítani” ezt a szótárt, 
+    megőrizve a kulcsok eredeti szerkezetét. Az eredmény egy szótár lesz egymásba ágyazott 
+    elemek nélkül. A kulcsoknak az elérési útvonalakat kell tartalmazniuk, amely az eredeti 
+    szótárból vett „/” karakterrel elválasztott szülői kulcsokból áll. Ha a kulcshoz tartozó 
+    érték egy üres szótár, akkor azt egy üres sorra ("") kell cserélni.<br>
+    Vizsgáljunk meg az alábbi példát:
+</p>
+<pre class="brush: python">
+{
+    "name": {
+        "first": "One",
+        "last": "Drone"
+    },
+    "job": "scout",
+    "recent": {},
+    "additional": {
+        "place": {
+            "zone": "1",
+            "cell": "2"}
+    }
+}
+</pre>
+<p>
+    Az eredmény a következő lesz:
+</p>
+<pre class="brush: python">
+{"name/first": "One",           #egy ősszülő elem
+ "name/last": "Drone",
+ "job": "scout",                #a gyökérelem kulcsa
+ "recent": "",                  #üres szótár
+ "additional/place/zone": "1",  #a harmadik szint
+ "additional/place/cell": "2"}
+</pre>
+
+<p>
+    Zsófia már elkészítette e feladathoz a forráskódot, de egy hibát tartalmaz.<br>
+
+    <strong>Önnek elég megtalálni és kijavítani ezt a hibát!</strong>
+</p>
+
+<p>
+    <strong>Bemeneti adatok: </strong> az eredeti szótár (dict).
+</p>
+
+<p>
+    <strong>Kimeneti adatok: </strong> a „kisimított” szótár (dict).
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Példák:</strong>
+    </p>
+    <pre class="brush: python">
+flatten({"key": "value"}) == {"key": "value"}
+flatten({"key": {"deeper": {"more": {"enough": "value"}}}}) == {"key/deeper/more/enough": "value"}
+flatten({"empty": {}}) == {"empty": ""}
+    </pre>
+</div>
+
+<p class="for_info_only">
+    <strong>Alkalmazása: </strong>
+    E feladatban használt módszerek hasznosak lehetnek a konfigurációk vagy fájlok 
+    struktúrájának elemzése és egyszerűsítése során. Az adott koncepciót könnyen 
+    lehet módosítani saját konkrét feladatok megoldásához. Nem utolsó sorban a mások 
+    által írt forráskód értelmezése és az abban történő hibakeresés egy nagyon hasznos 
+    készségnek bizonyulhat.
+</p>
+
+<p>
+    <strong>Előfeltételek:</strong><br>
+    A szótár <strong>kulcsai</strong> – nem üres karakterláncok.<br>
+    A szótár <strong>értékei</strong> – karakterláncok vagy további szótárak.<br>
+    root_dictionary != {}<br>
+</p>

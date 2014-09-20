@@ -1,0 +1,90 @@
+<p>
+    Nikola gosta de categorizar tudo o que vê. 
+    Uma vez, Stephan deu-lhe uma máquina de etiquetar no seu aniversário, 
+    e os robôs foram espalhando etiquetas em toda a superfície do navio durante semanas. 
+    Ele já categorizou todos os reagentes em seu laboratório, 
+    livros na biblioteca e notas sobre a mesa. 
+    Mas, então, ele aprendeu sobre <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dicionários</a> Python
+    e categorizou todas as configurações possíveis para os drones da Sophia. 
+    Agora, os arquivos são organizados em uma profunda estrutura aninhada, 
+    mas não Sophia gosta disto. Vamos ajudar Sophia a achatar esses dicionários.
+</p>
+
+<p>
+    Dicionários python são tipos de dados para armazenar e processar configurações.
+    Eles te permitem armazenar dados por chaves para criar estruturas aninhadas.
+    Você terá um dicionário onde as chaves são ou string ou um dicionário.
+    O objetivo é achatar o dicionário, mas preservar a estrutura nas chaves.
+    O resultado deve ser de um dicionário sem os dicionários aninhados.
+    As chaves devem conter o caminho que contém as chaves mães do dicionário original.
+    As chaves no caminho são separadas por "/". Se o valor for um dicionário vazio,
+    deve ser substituído por uma string vazia (""). Vejamos um exemplo:
+</p>
+<pre class="brush: python">
+{
+    "name": {
+        "first": "One",
+        "last": "Drone"
+    },
+    "job": "scout",
+    "recent": {},
+    "additional": {
+        "place": {
+            "zone": "1",
+            "cell": "2"}
+    }
+}
+</pre>
+<p>
+    O resultado deve ser:
+</p>
+<pre class="brush: python">
+{"name/first": "One",           #one parent
+ "name/last": "Drone",
+ "job": "scout",                #root key
+ "recent": "",                  #empty dict
+ "additional/place/zone": "1",  #third level
+ "additional/place/cell": "2"}
+</pre>
+
+<p>
+    Sophia já escreveu o código para esta missão, mas tem um bug.
+
+    <strong>Você precisa encontrar e corrigir esse bug.</strong>
+</p>
+
+<p>
+    <strong>Entrada: </strong> Um dicionário original como um dict.
+</p>
+
+<p>
+    <strong>Saída: </strong> O dicionário achatado como um dict.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Exemplo:</strong>
+    </p>
+    <pre class="brush: python">
+flatten({"key": "value"}) == {"key": "value"}
+flatten({"key": {"deeper": {"more": {"enough": "value"}}}}) == {"key/deeper/more/enough": "value"}
+flatten({"empty": {}}) == {"empty": ""}
+    </pre>
+</div>
+
+<p class="for_info_only">
+    <strong>Onde é usado: </strong>
+    Este conceito pode ser muito útil quando você precisa analisar arquivos de configurações e simplificar estruturas
+    de sistemas e estruturas de arquivos arcaicos.
+    Você pode facilmente especificar estas ideias para suas próprias especificações.
+    Além disto, é uma habilidade útil ser capas de ler códigos e encontrar bugs.
+</p>
+
+<p>
+    <strong>Condições prévias:</strong><br>
+    <strong>Chaves</strong> em um dicionário não são strings vazias.<br>
+    <strong>Valores</strong> em um dicionário são strings ou dicts.<br>
+    root_dictionary != {}<br>
+</p>

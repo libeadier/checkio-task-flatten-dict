@@ -1,0 +1,122 @@
+<p>
+   ニコラは見えるものすべてを分類するのが好きだ。ある時ステファンが彼の誕生日にラベルメーカーをあげ、ロボット達は何週間もの間、船のすべての表面からラベルをはがした。
+   彼はそれ以来研究室のすべての試薬や図書館の本、机のメモを分類していたが、彼はPythonの<a href="http://docs.python.jp/3/library/stdtypes.html#mapping-types-dict">辞書(dictionary)</a>について学習し、ソフィアの無人機についてのすべての可能な設定を分類した。
+   そのファイルは深いネスト構造になっているが、ソフィアはこれが好きではない。これらの辞書をフラットにしてソフィアを助けよう。
+
+    <!-- Nikola likes to categorize everything in sight.
+    One time Stephan gave him a label maker for his birthday,
+    and the robots were peeling labels off of every surface in the ship for weeks.
+    He has since categorized all the reagents in his laboratory,
+    books in the library and notes on the desk.
+    But then he learned about python <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dictionaries</a>,
+    and categorized all the possible configurations for Sophia’s drones.
+    Now the files are organized in a deep nested structure,
+    but Sophia doesn’t like this. Let's help Sophia to flatten these dictionaries. -->
+</p>
+
+<p>
+  Pythonの辞書は設定を格納し処理するのに便利なデータ型だ。
+  それらはキーによってネストした構造を作り、データを格納することができる。
+  あなたはキーが文字列で値が文字列または辞書の、辞書が与えられる。
+  ゴールは辞書をフラットにすることだが、キーの構造は保存する。
+  結果はネストされた辞書ではない必要がある。
+  キーは元の辞書の親のキーを含むパスである必要がある。
+  キーのパスは"/"で区切られる。もし値が空の辞書であれば、空文字("")に置き換えられるべきだ。例を見てみよう。
+
+    <!-- Python dictionaries are a convenient data type to store and process configurations.
+    They allow you to store data by keys to create nested structures.
+    You are given a dictionary where the keys are strings and the values are strings or dictionaries.
+    The goal is flatten the dictionary, but save the structures in the keys.
+    The result should be the a dictionary without the nested dictionaries.
+    The keys should contain paths that contain the parent keys from the original dictionary.
+    The keys in the path are separated by a "/". If a value is an empty dictionary,
+    then it should be replaced by an empty string (""). Let's look at an example: -->
+</p>
+<pre class="brush: python">
+{
+    "name": {
+        "first": "One",
+        "last": "Drone"
+    },
+    "job": "scout",
+    "recent": {},
+    "additional": {
+        "place": {
+            "zone": "1",
+            "cell": "2"}
+    }
+}
+</pre>
+<p>
+    結果は以下のようになる。
+
+    <!-- The result will be: -->
+</p>
+<pre class="brush: python">
+{"name/first": "One",           #1つの親
+ "name/last": "Drone",
+ "job": "scout",                #ルートキー
+ "recent": "",                  #空の辞書
+ "additional/place/zone": "1",  #3レベル
+ "additional/place/cell": "2"}
+</pre>
+
+<p>
+  ソフィアは既にこのタスクのためのコードを書き終えているがバグがある。
+
+    <!-- Sophia has already written the code for this task, but it has a bug. -->
+
+    <strong>あなたはバグを探して直す必要がある。</strong>
+
+    <!-- <strong>You need to find and fix this bug.</strong> -->
+</p>
+
+<p>
+    <strong>入力 </strong> 元々の辞書(dict型)
+
+    <!-- <strong>Input: </strong> An original dictionary as a dict. -->
+</p>
+
+<p>
+    <strong>出力 </strong> フラットにした辞書(dict型)
+
+    <!-- <strong>Output: </strong> The flattened dictionary as a dict. -->
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>例</strong>
+    </p>
+    <pre class="brush: python">
+flatten({"key": "value"}) == {"key": "value"}
+flatten({"key": {"deeper": {"more": {"enough": "value"}}}}) == {"key/deeper/more/enough": "value"}
+flatten({"empty": {}}) == {"empty": ""}
+    </pre>
+</div>
+
+<p class="for_info_only">
+  <strong>どうやって使われるか </strong>
+  この考え方は設定ファイルをパースし、とても古いシステムやファイル構造を単純化するのに役立つ。
+  あなたは簡単に自分独自の仕様向けにこのアイデアを適用することができるだろう。
+  その他に、コードを読みバグを探すことができるようになるのは有用なスキルである。
+
+    <!-- <strong>How it is used: </strong>
+    This concept can be useful if you need to parse config files and simplify structures
+    for grandfathered systems and file structures.
+    You can easily modify this idea for your own specifications.
+    Besides that, it's a  useful skill to be able to read code and search for bugs. -->
+</p>
+
+<p>
+    <strong>事前条件</strong><br>
+    <strong>キー</strong> は空文字ではない。<br>
+    <strong>値</strong>は文字列または辞書型である。<br>
+    root_dictionary != {}<br>
+
+    <!-- <strong>Precondition:</strong><br>
+    <strong>Keys</strong> in a dictionary are non-empty strings.<br>
+    <strong>Values</strong> in a dictionary are strings or dicts.<br>
+    root_dictionary != {}<br> -->
+</p>

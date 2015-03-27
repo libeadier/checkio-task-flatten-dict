@@ -1,14 +1,7 @@
-<style>
-  body {
-    font-family:'Lucida Grande',
- 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
- Meiryo, メイリオ, sans-serif;
-  }
-</style>
 <p>
-   ニコラは見えるものすべてを分類するのが好きです。ある時ステファンが彼の誕生日にラベルメーカーをあげ、ロボット達は何週間もの間、船のすべての表面からラベルをはがしました。
-   彼はそれ以来研究室のすべての試薬や図書館の本、机のメモを分類していましたが、彼はPythonの<a href="http://docs.python.jp/3/library/stdtypes.html#mapping-types-dict">辞書(dictionary)</a>について学習し、ソフィアの無人機についてのすべての可能な設定を分類しました。
-   そのファイルは深くネストされた構造になっていますが、ソフィアはこれが好きではありません。これらの辞書をフラットにしてソフィアを助けましょう。
+   ニコラは見えるものすべてを分類するのが好きだ。ある時ステファンが彼の誕生日にラベルメーカーをあげ、ロボット達は何週間もの間、船のすべての表面からラベルをはがした。
+   彼はそれ以来研究室のすべての試薬や図書館の本、机のメモを分類していたが、彼はPythonの<a href="http://docs.python.jp/3/library/stdtypes.html#mapping-types-dict">辞書(dictionary)</a>について学習し、ソフィアの無人機についてのすべての可能な設定を分類した。
+   そのファイルは深いネスト構造になっているが、ソフィアはこれが好きではない。これらの辞書をフラットにしてソフィアを助けよう。
 
     <!-- Nikola likes to categorize everything in sight.
     One time Stephan gave him a label maker for his birthday,
@@ -22,13 +15,13 @@
 </p>
 
 <p>
-  Pythonの辞書は設定を格納し処理するのに便利なデータ型です。
-  それらはキーによってネストした構造を作り、データを格納することができます。
-  あなたはキーが文字列で、値が文字列か辞書になっている辞書が与えられます。
-  ゴールは辞書をフラットにすることですが、キーの構造は保存します。
-  結果はネストされた辞書ではない必要があります。
-  キーは元の辞書の親のキーを含むパスである必要があります。
-  キーのパスは"/"で区切られます。もし値が空の辞書であれば、空文字("")に置き換えられるべきです。例を見てみましょう。
+  Pythonの辞書は設定を格納し処理するのに便利なデータ型だ。
+  それらはキーによってネストした構造を作り、データを格納することができる。
+  あなたはキーが文字列で値が文字列または辞書の、辞書が与えられる。
+  ゴールは辞書をフラットにすることだが、キーの構造は保存する。
+  結果はネストされた辞書ではない必要がある。
+  キーは元の辞書の親のキーを含むパスである必要がある。
+  キーのパスは"/"で区切られる。もし値が空の辞書であれば、空文字("")に置き換えられるべきだ。例を見てみよう。
 
     <!-- Python dictionaries are a convenient data type to store and process configurations.
     They allow you to store data by keys to create nested structures.
@@ -55,7 +48,7 @@
 }
 </pre>
 <p>
-    結果は以下のようになります。
+    結果は以下のようになる。
 
     <!-- The result will be: -->
 </p>
@@ -69,11 +62,11 @@
 </pre>
 
 <p>
-  ソフィアは既にこのタスクのためのコードを書き終えていますがバグがあります。
+  ソフィアは既にこのタスクのためのコードを書き終えているがバグがある。
 
     <!-- Sophia has already written the code for this task, but it has a bug. -->
 
-    <strong>あなたはバグを探して直す必要があります。</strong>
+    <strong>あなたはバグを探して直す必要がある。</strong>
 
     <!-- <strong>You need to find and fix this bug.</strong> -->
 </p>
@@ -105,9 +98,9 @@ flatten({"empty": {}}) == {"empty": ""}
 
 <p class="for_info_only">
   <strong>どうやって使われるか </strong>
-  この考え方は設定ファイルをパースし、とても古いシステムやファイル構造を単純化するのに役立ちます。
-  あなたは簡単に自分独自の仕様向けにこのアイデアを適用することができるでしょう。
-  それとは別に、コードを読みバグを探すことができるようになるのは有用なスキルです。
+  この考え方は設定ファイルをパースし、とても古いシステムやファイル構造を単純化するのに役立つ。
+  あなたは簡単に自分独自の仕様向けにこのアイデアを適用することができるだろう。
+  その他に、コードを読みバグを探すことができるようになるのは有用なスキルである。
 
     <!-- <strong>How it is used: </strong>
     This concept can be useful if you need to parse config files and simplify structures
@@ -118,8 +111,8 @@ flatten({"empty": {}}) == {"empty": ""}
 
 <p>
     <strong>事前条件</strong><br>
-    <strong>キー</strong> は空文字ではありません。<br>
-    <strong>値</strong>は文字列または辞書型です。<br>
+    <strong>キー</strong> は空文字ではない。<br>
+    <strong>値</strong>は文字列または辞書型である。<br>
     root_dictionary != {}<br>
 
     <!-- <strong>Precondition:</strong><br>

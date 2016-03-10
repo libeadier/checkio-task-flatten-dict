@@ -1,0 +1,96 @@
+<p>
+    Nikola adore tout classer par catégorie.
+    Stephan lui avait offert une étiqueteuse pour son anniversaire,
+    et les robots se sont amusés pendant des semaines à décoller les étiquettes partout dans le vaisseau.
+    Depuis, il a classifié tous les réactifs de son laboratoire,
+    les livres de la bibliothèque et les notes sur son bureau. 
+    Mais il a depuis appris à utiliser les 
+    <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dictionaires</a> (dict) de Python,
+    et il a catégorisé toutes les configurations possibles pour les drones de Sophia.
+    À présent, les fichiers sont organisés dans de profondes structures imbriquées,
+   ce qui déplaît à Sophia.
+   Aidons Sophia à aplanir ces dictionnaires.
+</p>
+
+<p>
+  Le type de donnée "dictionnaire" de Python est très pratique pour enregistrer et programmer des configurations complexes. 
+  Il permet de stocker des données par clés pour créer des structures imbriquées. 
+  Il vous est donné un dictionnaire (dict) dont les clés sont des chaînes de caractères (string), et les valeurs des 
+  chaînes de caractères (string)
+  ou des dictionnaires (dict).
+  
+  L'objectif est d'aplanir ce dictionnaire, en conservant cependant la structure grâce aux clés. 
+  Le résutat doit être un dictionnaire sans  sous-dictionnaires (les valeurs doivent toutes être des chaînes de caractères).
+  Les clés doivent contenir les chemins d'accès constitués des clés parentes du dictionnaire d'origine.
+  Dans ces chemins d'accès, les clés sont séparées par des "/". Si une valeur est un dictionnaire vide, il sera remplacé 
+  par la chaîne de caractères vide (""). Observons un exemple :
+</p>
+<pre class="brush: python">
+{
+    "name": {
+        "first": "One",
+        "last": "Drone"
+    },
+    "job": "scout",
+    "recent": {},
+    "additional": {
+        "place": {
+            "zone": "1",
+            "cell": "2"}
+    }
+}
+</pre>
+<p>
+    Le résultat sera :
+</p>
+<pre class="brush: python">
+{"name/first": "One",           #one parent
+ "name/last": "Drone",
+ "job": "scout",                #root key
+ "recent": "",                  #empty dict
+ "additional/place/zone": "1",  #third level
+ "additional/place/cell": "2"}
+</pre>
+
+<p>
+  Sophia a déjà écrit un code pour cette mission, mais il contient des erreurs.
+
+    <strong>Il vous faut trouver et corriger ces erreurs.</strong>
+</p>
+
+<p>
+    <strong>Input: </strong> Un dictionnaire d'origine (dict).
+</p>
+
+<p>
+    <strong>Output: </strong> Le dictionnaire aplani (dict).
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Exemple:</strong>
+    </p>
+    <pre class="brush: python">
+flatten({"key": "value"}) == {"key": "value"}
+flatten({"key": {"deeper": {"more": {"enough": "value"}}}}) == {"key/deeper/more/enough": "value"}
+flatten({"empty": {}}) == {"empty": ""}
+    </pre>
+</div>
+
+<p class="for_info_only">
+    <strong>Utilisation: </strong>
+    Ce concept peut être utile si vous avez besoin de "parser" des fichiers ou de simplifier des structures
+    pour des systèmes ou structures de fichiers qui datent.
+    Vous pouvez adapter cette idée à votre propre situation.
+   De plus, c'est très utile d'être capable de comprendre le code de quelqu'un d'autre, et d'en trouver les erreurs.
+   
+</p>
+
+<p>
+    <strong>Précondition:</strong><br>
+    <strong>Keys</strong> in a dictionary are non-empty strings.<br>
+    <strong>Values</strong> in a dictionary are strings or dicts.<br>
+    root_dictionary != {}<br>
+</p>

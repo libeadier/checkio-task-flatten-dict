@@ -7,20 +7,20 @@
     Mais il a depuis appris à utiliser les 
     <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">dictionaires</a> (dict) de Python,
     et il a catégorisé toutes les configurations possibles pour les drones de Sophia.
-    À présent, les fichiers sont organisés dans de profondes structures imbriquées,
+    À présent, les fichiers sont organisés dans de profondes structures arborescentes,
    ce qui déplaît à Sophia.
-   Aidons Sophia à aplanir ces dictionnaires.
+   Aidons Sophia à linéariser ces dictionnaires.
 </p>
 
 <p>
   Le type de donnée "dictionnaire" de Python est très pratique pour enregistrer et programmer des configurations complexes. 
-  Il permet de stocker des données par clés pour créer des structures imbriquées. 
+  Il permet de stocker des données par clés pour créer des structures arborescentes. 
   Il vous est donné un dictionnaire (dict) dont les clés sont des chaînes de caractères (string), et les valeurs des 
-  chaînes de caractères (string)
-  ou des dictionnaires (dict).
+  chaînes de caractères (string) ou des dictionnaires (dict).
   
-  L'objectif est d'aplanir ce dictionnaire, en conservant cependant la structure grâce aux clés. 
-  Le résutat doit être un dictionnaire sans  sous-dictionnaires (les valeurs doivent toutes être des chaînes de caractères).
+  L'objectif est de linéariser (aplanir) ce dictionnaire, en conservant cependant la structure d'origine grâce aux clés. 
+  Le résutat doit être un dictionnaire "plat", sans  sous-dictionnaires (les valeurs doivent toutes être des chaînes 
+  de caractères).
   Les clés doivent contenir les chemins d'accès constitués des clés parentes du dictionnaire d'origine.
   Dans ces chemins d'accès, les clés sont séparées par des "/". Si une valeur est un dictionnaire vide, il sera remplacé 
   par la chaîne de caractères vide (""). Observons un exemple :
@@ -63,7 +63,7 @@
 </p>
 
 <p>
-    <strong>Output: </strong> Le dictionnaire aplani (dict).
+    <strong>Output: </strong> Le dictionnaire linéarisé ("plat") (dict).
 </p>
 
 

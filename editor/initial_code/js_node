@@ -1,0 +1,35 @@
+"use strict";
+
+function flatten(dictionary){
+    // your code here
+    return {};
+}
+
+var assert = require('assert');
+
+if (!global.is_checking) {
+    var test_input = {"key": {"deeper": {"more": {"enough": "value"}}}}
+    console.log(' Input: ' + JSON.stringify(test_input, null, 4))
+    console.log('Output: ' + JSON.stringify(flatten(test_input), null, 4))
+
+    // These "asserts" using only for self-checking and not necessary for auto-testing
+    assert.deepEqual(flatten({"key": "value"}), {"key": "value"});
+    assert.deepEqual(flatten({"key": {"deeper": {"more": {"enough": "value"}}}}),
+        {"key/deeper/more/enough": "value"});
+    assert.deepEqual(flatten({"empty": {}}), {"empty": ""});
+    assert.deepEqual(flatten({"name": {
+                        "first": "One",
+                        "last": "Drone"},
+                    "job": "scout",
+                    "recent": {},
+                    "additional": {
+                        "place": {
+                            "zone": "1",
+                            "cell": "2"}}}), {"name/first": "One",
+          "name/last": "Drone",
+          "job": "scout",
+          "recent": "",
+          "additional/place/zone": "1",
+          "additional/place/cell": "2"});
+    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
+}

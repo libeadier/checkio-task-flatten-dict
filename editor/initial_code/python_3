@@ -1,9 +1,13 @@
 def flatten(dictionary):
-    # your code is here
+    # your code here
     return {}
 
 
 if __name__ == '__main__':
+    test_input = {"key": {"deeper": {"more": {"enough": "value"}}}}
+    print(' Input: {}'.format(test_input))
+    print('Output: {}'.format(flatten(test_input)))
+
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert flatten({"key": "value"}) == {"key": "value"}, "Simple"
     assert flatten(
@@ -25,3 +29,4 @@ if __name__ == '__main__':
           "recent": "",
           "additional/place/zone": "1",
           "additional/place/cell": "2"}
+    print('You all set. Click "Check" now!')
